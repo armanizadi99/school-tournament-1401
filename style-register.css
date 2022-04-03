@@ -1,0 +1,22 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite !important;
+    overflow-x: hidden;
+}
+
+input:focus {
+    background-color: beige !important;
+}
+
+#registration-form {
+    z-index: 1;
+}
+ 
+img {
+    margin-left: 80%;
+    margin-top: -108%;
+    filter: blur(1px);
+}

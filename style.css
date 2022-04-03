@@ -1,0 +1,92 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black !important;
+    background: url('images/main-bg-i.PNG') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Fira Sans', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+#overly-behind-content {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.7);
+    color: rgb(255, 255, 255);
+    font-size: 180%;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+/*Collapse text*/
+#accordion {
+    margin-top: 100vh;
+    background-color: black !important;
+    text-align: center;
+}
+
+#accordion .card-1 {
+    background-color: rgb(255, 252, 46);
+}
+
+#accordion .card-2 {
+    background-color: rgb(185, 25, 159);
+}
+
+#accordion .card-3 {
+    background-color: rgb(10, 136, 58);
+}
+
+#accordion .card-4 {
+    background-color: rgba(226, 27, 27, 0.747);
+}
+
+#accordion .card-5 {
+    background-color: rgba(11, 32, 218, 0.603);
+}
+
+#accordion .card-6 {
+    background-color: rgb(22, 141, 135);
+}
+
+span {
+    color:rgb(0, 0, 0) !important;
+    font-weight: bold;
+}
+
+.collapse-btns {
+    box-shadow: inset 0 0 0 0 #f5f5f5;
+    color: #54b3d6;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.collapse-btns:hover {
+    color: #fff;
+    box-shadow: inset 300px 0 0 0 #ffffff;;
+}
+
+footer {
+    background-color: rgb(250, 239, 239);
+}
+
+#footer-text {
+    margin-top: 15px;
+}
+
+hr {
+    width: 70%;
+}
+

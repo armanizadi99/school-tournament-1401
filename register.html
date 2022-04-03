@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free form creator">
+    <meta name="keywords" content="form, free form, form creator, create form">
+    <meta name="author" content="Hamidreza Izadi & Ali Bolouki">
+    <!--Title bar-->
+    <link rel="shortcut icon" href="images/title-bar.png"/>
+    <title>Unix Form | Let's Get Started</title>
+    <!--CSS3-->
+    <link rel="stylesheet" type="text/css" href="style-register.css"/>
+    <!--Bootstrap4-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+    <main>
+        <div class="container mt-5">
+            <div class="row">
+                <p class="col-12"><a href="index.html" title="Back">&larr;</a></p>
+                <h1 class="col-12">Welcome to unix form</h1>
+                <p class="col-12">Create an account or <a href="" title="Log in form" onclick="changing_form_to_login(); return false;">log in</a> </p>
+                <hr>
+            </div>
+        </div>
+
+       <div class="container">
+           <div class="row">
+                <form action="#" class="col-md-5 col-sm-12 mt-5" id="registration-form">
+                    <!-- input one = Email -->
+                    <div class="form-group">
+                        <lable for="singup_in1">Email: </lable>
+                        <input type="email" id="singup_in1" class="form-control" placeholder="Enter your email" required/>
+                    </div>
+                    <!-- input two = UserName -->
+                    <div class="form-group">
+                        <lable for="singup_in2">Username: </lable>
+                        <input type="text" id="singup_in2" class="form-control" placeholder="Enter a username" required/>
+                    </div>
+                    <!-- input three = Password -->
+                    <div class="form-group">
+                        <lable for="singup_in3">Username: </lable>
+                        <input type="password" id="singup_in3" class="form-control" placeholder="Enter a strong password" required/>
+                    </div>
+                    <p class="text-muted">By creating an account, you agree to our Terms. &copy;2022 All Rights Reserved</p>
+                    <!-- Two button -->
+                    <div class="btn-group text-center mt-2 d-block">
+                        <!-- submit -->
+                        <input type="submit" value="Sign up" class="btn btn-outline-success"/>
+                        <!-- reset -->
+                        <input type="reset" value="Reset" class="btn btn-outline-danger"/>
+                    </div>
+                </form>
+
+                <!--login form | it's hidden at the first place-->
+                <form action="#" class="col-md-5 col-sm-12 mt-5" id="login-form">
+                    <!-- input one = UserName -->
+                    <div class="form-group">
+                        <lable for="login_in1">Username: </lable>
+                        <input type="text" id="login_in1" class="form-control" placeholder="Enter your username" required/>
+                    </div>
+                    <!-- input two = Password -->
+                    <div class="form-group">
+                        <lable for="login_in2">Password: </lable>
+                        <input type="password" id="login_in2" class="form-control" placeholder="Enter your password" required/>
+                    </div>
+                    <p><a href="" title="Sing up form" onclick="changing_form_to_singup(); return false;">Don't have an account?</a></p>
+                    <!-- Two button -->
+                    <div class="btn-group text-center mt-2 d-block">
+                        <!-- submit -->
+                        <input type="submit" value="Log in" class="btn btn-outline-success"/>
+                        <!-- reset -->
+                        <input type="reset" value="Reset" class="btn btn-outline-danger"/>
+                    </div>
+                </form>
+
+                <!--the pic | it will be removed in sm devices-->
+                <img src="images/register-page.jpg" class="col-md-10 d-md-block d-none" alt="Amazing picture by Toa Heftiba"/>
+            </div>
+       </div>
+              
+    </main>
+
+    <script>
+        document.getElementById("login-form").style.display = "none";
+        
+        function changing_form_to_login(){
+            document.getElementById("registration-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        function changing_form_to_singup(){
+            document.getElementById("registration-form").style.display = "block";
+            document.getElementById("login-form").style.display = "none";
+        }
+    </script>
+
+    <!--Bootstrap4-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
