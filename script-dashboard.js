@@ -1,5 +1,7 @@
+// counting the number of questions
+var countQ = 0;
 
-// Create a close btrn and append it to each list item
+// Create a close btn and append it to each list item
 var myNodelist = document.querySelectorAll("main.li");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -30,11 +32,17 @@ function newElement() {
   if (inputValue === '') {
     alert("You must write something :|");
   } else {
+    // counting the questions | adding
+    countQ += 1;
+    console.log(countQ);
     document.getElementById("myUL").appendChild(li);
-    // if the user wants to reload the page
-    window.onbeforeunload = function () {
-    return "Your questions may be reset";
-    }
+    // creating input for answering
+    var inputAnswer = document.createElement("input");
+    inputAnswer.type = "text";
+    inputAnswer.name = "inputAnswer";
+    inputAnswer.disabled = true;
+    inputAnswer.placeholder = "short answer ...";
+    li.appendChild(inputAnswer);
   }
   document.getElementById("myInput").value = "";
 
@@ -48,6 +56,18 @@ function newElement() {
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
+      // counting the questions | reduc
+      countQ -= 1;
+      console.log(countQ);
     }
+  }
+}
+
+// if clicked on create btn without any questions entered
+function createForm() {
+  if (countQ == 0) {
+    alert("You have not entered any questions! :[");
+  } else {
+    location.replace("forms.html");
   }
 }
