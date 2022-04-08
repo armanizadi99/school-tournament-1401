@@ -22,7 +22,7 @@
             <div class="row">
                 <p class="col-12"><a href="index.html" title="Back">&larr;</a></p>
                 <h1 class="col-12">Welcome to unix form</h1>
-                <p class="col-12">Create an account or <a href="" title="Log in form" onclick="changing_form_to_login(); return false;">log in</a> </p>
+                <p class="col-12">Create an account or <a href="login.html" title="Log in form">log in</a> </p>
                 <hr>
             </div>
         </div>
@@ -55,48 +55,12 @@
                     </div>
                 </form>
 
-                <!--login form | it's hidden at the first place-->
-                <form action="login.php" method="post" name="login-form" class="col-md-5 col-sm-12 mt-5" id="login-form">
-                    <!-- input one = UserName -->
-                    <div class="form-group">
-                        <lable for="login_in1">Username: </lable>
-                        <input type="text" name="login_username" id="login_in1" class="form-control" placeholder="Enter your username" required/>
-                    </div>
-                    <!-- input two = Password -->
-                    <div class="form-group">
-                        <lable for="login_in2">Password: </lable>
-                        <input type="password" name="login_password" id="login_in2" class="form-control" placeholder="Enter your password" required/>
-                    </div>
-                    <p><a href="" title="Sing up form" onclick="changing_form_to_singup(); return false;">Don't have an account?</a></p>
-                    <!-- Two button -->
-                    <div class="btn-group text-center mt-2 d-block">
-                        <!-- submit -->
-                        <input type="submit" name="login_submit" value="Log in" class="btn btn-outline-success"/>
-                        <!-- reset -->
-                        <input type="reset" name="login_reset" value="Reset" class="btn btn-outline-danger"/>
-                    </div>
-                </form>
-
                 <!--the pic | it will be removed in sm devices-->
                 <img src="images/register-page.jpg" class="col-md-10 d-md-block d-none" alt="Amazing picture by Toa Heftiba"/>
             </div>
        </div>
               
     </main>
-
-    <script>
-        document.getElementById("login-form").style.display = "none";
-        
-        function changing_form_to_login(){
-            document.getElementById("registration-form").style.display = "none";
-            document.getElementById("login-form").style.display = "block";
-        }
-
-        function changing_form_to_singup(){
-            document.getElementById("registration-form").style.display = "block";
-            document.getElementById("login-form").style.display = "none";
-        }
-    </script>
 
     <!--Bootstrap4-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
