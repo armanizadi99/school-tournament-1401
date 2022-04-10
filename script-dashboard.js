@@ -24,11 +24,25 @@ for (i = 0; i < close.length; i++) {
 
 // Create a new list item when clicking on the add btn
 function newElement() {
+  // creating li and lable  | appending lable into li and adding them between ul tag
   var li = document.createElement("li");
+  var lable = document.createElement("label");
+  lable.name = "question";
+  lable.id = "question";
   var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
+  var text = document.createTextNode(inputValue);
+  lable.appendChild(text);
+  li.appendChild(lable);
+  // creating input for answering and adding them to li
+  var inputAnswer = document.createElement("input");
+  inputAnswer.type = "text";
+  inputAnswer.name = "inputAnswer";
+  inputAnswer.id = "inputAnswer";
+  inputAnswer.classList = "col-12";
+  inputAnswer.placeholder = "short answer ...";
+  li.appendChild(inputAnswer);
 
+  // checking the content of q input to create the question or not
   if (inputValue === '') {
     alert("You must write something :|");
   } else {
@@ -36,13 +50,6 @@ function newElement() {
     countQ += 1;
     console.log(countQ);
     document.getElementById("myUL").appendChild(li);
-    // creating input for answering
-    var inputAnswer = document.createElement("input");
-    inputAnswer.type = "text";
-    inputAnswer.name = "inputAnswer";
-    inputAnswer.disabled = true;
-    inputAnswer.placeholder = "short answer ...";
-    li.appendChild(inputAnswer);
   }
   document.getElementById("myInput").value = "";
 
@@ -56,17 +63,19 @@ function newElement() {
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
-      // counting the questions | reduc
+      // counting the questions | reduce
       countQ -= 1;
       console.log(countQ);
     }
   }
 }
 
-// if clicked on create btn without any questions entered
-function createForm() {
+// if submited without any questions entered
+function createForm(event) {
   if (countQ == 0) {
     alert("You have not entered any questions! :[");
+    event.preventDefault();
+    window.history.back();
   } else {
     location.replace("forms.html");
   }

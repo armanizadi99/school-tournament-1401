@@ -6,7 +6,7 @@ $res=login(true);
 if(!isset($_SESSION['loggedin']))
 {
 redirect("login.php");
-exit();
+exit(); 
 }
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ exit();
                           <a class="nav-link" href="#">Settings</a>
                         </li>
                         <li class="nav-item mr-3">
-                          <a class="nav-link" href="#">Infos</a>
+                          <a class="nav-link" href="#">Forms</a>
                         </li>
                         <li class="nav-item mr-3">
                           <a class="nav-link" href="#">Log out</a>
@@ -61,19 +61,24 @@ exit();
     </header>
 
     <main>
-        <!--Demo-->
-        <div class="container mt-5">
-            <div class="row">
-                <div id="myDIV" class="col-12 header">
-                    <h2>Write down your question</h2>
-                    <input type="text" id="myInput" placeholder="yes/no/wh questions ...">
-                    <span onclick="newElement()" class="addBtn">Add</span>
-                </div>
-                  
-                  <ul class="col-12 mt-3" id="myUL"></ul>
-            </div>
-        </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div id="myDIV" class="col-12 header">
+            <h2>Write down your question</h2>
+            <input type="text" id="myInput" placeholder="yes/no/wh questions ...">
+            <span onclick="newElement()" class="addBtn">Add</span>
+          </div>
 
+          <!--demo for sending infos-->
+          <form class="col-12 mt-3 mb-3" name="question_form" action="forms.php" method="post" onsubmit="createForm(event);">
+            <ul class="col-12" id="myUL">
+              <!-- questions will be creating here -->
+            </ul>
+            <input class="col-12 btn btn-success mt-3" name="submit" type="submit" value="Create Form"/>
+          </form>
+
+          </div>
+      </div>
     </main>
 
     <script src="script-dashboard.js"></script>
