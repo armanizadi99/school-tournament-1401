@@ -1,0 +1,84 @@
+<?php
+session_start();
+include("loginfunction.php");
+if(!isset($_SESSION['loggedin']))
+$res=login(true);
+if(!isset($_SESSION['loggedin']))
+{
+redirect("login.php");
+exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free form creator">
+    <meta name="keywords" content="form, free form, form creator, create form">
+    <meta name="author" content="Hamidreza Izadi & Ali Bolouki">
+    <!--Title bar-->
+    <link rel="shortcut icon" href="images/title-bar.png"/>
+    <title>Unix Form | Dashboard</title>
+    <!--CSS3-->
+    <link rel="stylesheet" type="text/css" href="style-dashboard.css"/>
+    <!--Bootstrap4-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--The navbar-->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-12 navbar navbar-expand-lg navbar-light bg-transparent">
+                    <img src="images/title-bar.png" width="40px" alt="Super mario pic"/>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center flex-column" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active mr-3">
+                          <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                          <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                          <a class="nav-link" href="#">Infos</a>
+                        </li>
+                        <li class="nav-item mr-3">
+                          <a class="nav-link" href="#">Log out</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--Demo-->
+        <div class="container mt-5">
+            <div class="row">
+                <div id="myDIV" class="col-12 header">
+                    <h2>Write down your question</h2>
+                    <input type="text" id="myInput" placeholder="yes/no/wh questions ...">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                </div>
+                  
+                  <ul class="col-12 mt-3" id="myUL"></ul>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script-dashboard.js"></script>
+    <!--Bootstrap4-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
