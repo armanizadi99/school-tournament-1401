@@ -1,5 +1,7 @@
 <?php
 include('error.php');
+include("redirect.php");
+include(loginfunction.php");
 if(!isset($_POST['singup_email']) or empty($_POST['singup_email']) or !isset($_POST['singup_username']) or empty($_POST['singup_username']) or !isset($_POST['singup_password']) or empty($_POST['singup_password']))
 exit(error("Empty required field. Please  make sure that required fields are all  filled .", "register.html"));
 $singup_email = $_POST["singup_email"];
@@ -17,10 +19,18 @@ if(filter_var($singup_email, FILTER_VALIDATE_EMAIL)==false)
 exit(error("Invalid email address structure", "register.html"));
 mysqli_report(MYSQLI_REPORT_OFF);
 $con=mysqli_connect('localhost', 'root', '', 'forms');
+if(mysqli_connect_errno())
+exit(error("Connection to database server has faled. Error message: ".mysqli_connect_error(), "register.html"));
 $query="insert into users(username, email, passwordhash) values('".$singup_username."', '".$singup_email."', '".password_hash($singup_password, PASSWORD_BCRYPT)."');";
 $qres=mysqli_query($con, $query);
-echo mysqli_error($con);
-//throw  an error if any database error occurred here.
+$errno=mysqli_errno($con);
+if($errno)
+{
+exit(error(mysqli_error($con), "register.html"));
+}
+else
+login(true);
+redirect("dashboard.php");
 //send email verification code here.
 mysqli_close($con);
 ?>
